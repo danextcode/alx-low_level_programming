@@ -2,11 +2,11 @@
 /*
  * main - Prints all single digit numbers of base 10 starting from 0,
  *        only using putchar and without char variables.
- * Description: - Main entry point
- * Return: Always 0.
+ * Description: print numbers 0 to 9 using putchar()
+ * Return: 0 (success)
  */
 
-int main(void) /* - Prints numbers of base 10 */
+int main(void) 
 {
 	int num;
 
