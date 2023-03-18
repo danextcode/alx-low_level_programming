@@ -1,37 +1,17 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
- * Description: print all possible combination of two two-digit numbers
- * Return: 0 (success)
+ * main - Prints the alphabet in lowercase.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int i, j;
+	char letter;
 
-	i = 0;
-	while (i <= 98)
-	{
-		j = i + 1;
-		while (j <= 99)
-		{
-			if (i < j)
-			{
-				putchar(i / 10 + '0');
-				putchar(i % 10 + '0');
-				putchar(' ');
-				putchar(j / 10 + '0');
-				putchar(j % 10 + '0');
-				if (i != 98 || j != 99)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-			++j;
-		}
-		++i;
-	}
+	for (letter = 'a'; letter <= 'z'; letter++)
+		putchar(letter);
+
 	putchar('\n');
+
 	return (0);
 }
