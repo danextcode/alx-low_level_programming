@@ -1,9 +1,8 @@
+#include "main.h"
+
 /*
  * File: 7-print_diagonal.c
- * Auth: Brennan D Baraban
  */
-
-#include "holberton.h"
 
 /**
  * print_diagonal - Draws a diagonal line using the \ character.
