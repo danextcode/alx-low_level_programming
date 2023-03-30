@@ -1,23 +1,56 @@
+/*
+ * File: 103-print_buffer.c
+ */
+
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _strcmp - compare two strings (exactly like the standard library function)
- *
- * @s1: the first string
- * @s2: the second string
- *
- * Return: 0 if strings are equal otherwise the difference between the strings
+ * print_buffer - Prints a buffer 10 bytes at a time, starting with
+ *                the byte position, then showing the hex content,
+ *                then displaying printable charcaters.
+ * @b: The buffer to be printed.
+ * @size: The number of bytes to be printed from the buffer.
  */
-int _strcmp(char *s1, char *s2)
+void print_buffer(char *b, int size)
 {
-	for (; *s1 != '\0' && *s2 != '\0'; ++s1, ++s2)
-		if (*s1 != *s2)
-			return (*s1 - *s2);
+	int byte, index;
 
-	if (*s1 != '\0')
-		return (*s1);
-	else if (*s2 != '\0')
-		return (*s2);
+	for (byte = 0; byte < size; byte += 10)
+	{
+		printf("%08x: ", byte);
 
-	return (0);
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				printf("  ");
+
+			else
+				printf("%02x", *(b + index + byte));
+
+			if ((index % 2) != 0 && index != 0)
+				printf(" ");
+		}
+
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				break;
+
+			else if (*(b + index + byte) >= 31 &&
+				 *(b + index + byte) <= 126)
+				printf("%c", *(b + index + byte));
+
+			else
+				printf(".");
+		}
+
+		if (byte >= size)
+			continue;
+
+		printf("\n");
+	}
+
+	if (size <= 0)
+		printf("\n");
 }
