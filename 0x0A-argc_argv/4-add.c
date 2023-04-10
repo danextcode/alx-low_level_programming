@@ -1,6 +1,6 @@
-*
+/*
  * File: 4-add.c
-  */
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
