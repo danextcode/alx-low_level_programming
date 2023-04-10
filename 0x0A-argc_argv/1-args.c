@@ -1,6 +1,6 @@
 /*
  * File: 1-args.c
- * Author: Yebung Solomon 
+ * Author:Yebung Solomon
  */
 
 #include <stdio.h>
