@@ -2,7 +2,7 @@
  * File: 0-create_array.c
  */
 
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
