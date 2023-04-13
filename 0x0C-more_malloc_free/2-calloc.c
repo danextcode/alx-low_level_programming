@@ -1,46 +1,37 @@
-#include <stdlib.h>
+/*
+ * File: 2-calloc.c
+ */
+
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * str_concat - concatenate two strings
- * @s1: first string
- * @s2: second string
+ * _calloc - Allocates memory for an array of a certain number
+ *           of elements each of an inputted byte size.
+ * @nmemb: The number of elements.
+ * @size: The byte size of each array element.
  *
- * Desciption: treat null strings as empty
- *
- * Return: pointer to concatenated string, NULL if it fails
+ * Return: If nmemb = 0, size = 0, or the function fails - NULL.
+ *         Otherwise - a pointer to the allocated memory.
  */
-char *str_concat(char *s1, char *s2)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *str;
-	int i, j, len1, len2;
+	void *mem;
+	char *filler;
+	unsigned int index;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	len1 = len2 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	while (s2[len2] != '\0')
-		len2++;
-
-	str = malloc((len1 + len2 + 1) * sizeof(*s1));
-	if (str == NULL)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	i = 0;
-	while (i < len1)
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (j <= len2)
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	return (str);
+	mem = malloc(size * nmemb);
+
+	if (mem == NULL)
+		return (NULL);
+
+	filler = mem;
+
+	for (index = 0; index < (size * nmemb); index++)
+		filler[index] = '\0';
+
+	return (mem);
 }
