@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
- * File: 2-main.c 
- * Prints the name of source file copied from.
- * Description: main - Prints the name of source file copied from
+ * main - Prints the name of source file copied from.
+ * Desc: Prints the name of source file copied from
  * Return: Always 0.
  */
 
